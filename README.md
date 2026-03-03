@@ -82,6 +82,7 @@ This application is developed for **educational purposes** and aims to support *
 ```bash
 git clone https://github.com/yourusername/faraid-app.git
 
+
 ---
 
 ## 📝 Feedback Welcome
@@ -89,3 +90,5 @@ git clone https://github.com/yourusername/faraid-app.git
 This project is always a work in progress.  
 If you have suggestions, improvements, or questions, feel free to **reach out** or **create an issue**.  
 Let’s make learning Faraid easier together! 🌟
+
+---
