@@ -1,4 +1,4 @@
-📚 *Faraid A–Z*
+📚 #Faraid A–Z
 Final Year Project – Bachelor of Science (Information Technology)
 
 Universiti Utara Malaysia (UUM)
