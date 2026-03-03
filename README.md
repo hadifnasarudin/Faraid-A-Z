@@ -1,77 +1,83 @@
-📚 **Faraid A–Z**
-Final Year Project – Bachelor of Science (Information Technology)
+# 📚 Faraid A–Z
 
-Universiti Utara Malaysia (UUM)
+**Final Year Project – Bachelor of Science (Information Technology)**  
+**Universiti Utara Malaysia (UUM)**  
 
-📌 **Project Overview**
+---
 
-Faraid A–Z is a Final Year Project developed for the Bachelor of Science in Information Technology at Universiti Utara Malaysia.
+## 📌 Project Overview
 
-This project aims to digitalize the e-book on Harta Pusaka provided by Martadha Da'wah Center (MADAD) and transform it into an interactive mobile application.
+Faraid A–Z is a Final Year Project developed for the **Bachelor of Science in Information Technology** at Universiti Utara Malaysia.  
 
-The system is designed to increase public awareness and improve understanding of Faraid (Islamic inheritance law) in a more structured, accessible, and user-friendly way.
+The project aims to **digitalize the e-book on Harta Pusaka** from Martadha Da'wah Center (MADAD) and transform it into an **interactive mobile application**.  
 
-🎯 **Objective**
+The system is designed to:
+
+- Increase public awareness  
+- Improve understanding of Faraid (Islamic inheritance law)  
+- Present information in a structured, accessible, and user-friendly way  
+
+---
+
+## 🎯 Objective
 
 The main objectives of this project are:
 
-To digitalize the Faraid e-book from Martadha Da'wah Center (MADAD)
+- **Digitalize** the Faraid e-book from MADAD  
+- **Provide easy access** to knowledge about Islamic inheritance  
+- **Increase awareness** and understanding of Faraid law  
+- **Simplify inheritance calculations** with a digital calculator  
 
-To provide the public with easier access to knowledge about Islamic inheritance
+---
 
-To increase awareness and understanding of Faraid law
+## 🚀 Features
 
-To simplify inheritance calculations through a digital calculator
+### 📖 Ilmu Faraid
+- Structured learning materials about Faraid  
+- Explanation of inheritance concepts  
+- Educational content based on the original MADAD e-book  
 
-🚀 **Features**
-📖 1. Ilmu Faraid
+### 🧮 Kalkulator Faraid
+- Automated inheritance share calculation  
+- User-friendly interface for entering heir information  
+- Accurate distribution based on Faraid principles  
 
-Structured learning materials about Faraid
+### ❓ Soalan Lazim (FAQ)
+- Frequently asked questions about Faraid  
+- Clarification of common misunderstandings  
+- Quick reference for users  
 
-Explanation of inheritance concepts
+### 📂 Kes Faraid
+- Real-life case examples  
+- Practical understanding of inheritance distribution  
+- Scenario-based learning approach  
 
-Educational content based on the original MADAD e-book
+---
 
-🧮 2. Kalkulator Faraid
+## 🛠️ Technology Used
 
-Automated inheritance share calculation
+- **Flutter** – Mobile Application Development  
+- **Dart** – Programming Language  
 
-User-friendly interface for entering heir information
+---
 
-Accurate distribution based on Faraid principles
+## 👨‍🎓 Academic Information
 
-❓ 3. Soalan Lazim (FAQ)
+- **Programme:** Bachelor of Science (Information Technology)  
+- **Institution:** Universiti Utara Malaysia  
+- **Project Type:** Final Year Project (FYP)  
+- **Supervisor:** Dr. Nur Azzah Abu Bakar  
 
-Frequently asked questions about Faraid
+---
 
-Clarification of common misunderstandings
+## 📌 Project Purpose
 
-Quick reference for users
+This application is developed for **educational purposes** and aims to support **digital transformation in Islamic knowledge dissemination**, especially in the field of inheritance (Faraid).  
 
-📂 4. Kes Faraid
+---
 
-Real-life case examples
+## ⚡ How to Run (Optional)
 
-Practical understanding of inheritance distribution
-
-Scenario-based learning approach
-
-🛠️ Technology Used
-
-Flutter (Mobile Application Development)
-
-Dart Programming Language
-
-👨‍🎓 **Academic Information**
-
-Programme: Bachelor of Science (Information Technology)
-
-Institution: Universiti Utara Malaysia
-
-Project Type: Final Year Project (FYP)
-
-Supervisor: Dr Nur Azzah Abu Bakar
-
-📌 **Project Purpose**
-
-This application is developed for educational purposes and aims to support digital transformation in Islamic knowledge dissemination, especially in the field of inheritance (Faraid).
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/faraid-app.git
