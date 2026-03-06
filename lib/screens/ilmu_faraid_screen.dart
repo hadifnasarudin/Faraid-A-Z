@@ -1,11 +1,4 @@
 import 'package:flutter/material.dart';
-import 'maksud_harta_pusaka.dart';
-import 'definisi_faraid.dart';
-import 'kepentingan_faraid.dart';
-import 'rukun_faraid.dart';
-import 'syarat_faraid.dart';
-import 'sebab_faraid.dart';
-import 'senarai_waris.dart';
 
 class IlmuFaraidScreen extends StatelessWidget {
   const IlmuFaraidScreen({super.key});
@@ -18,58 +11,49 @@ class IlmuFaraidScreen extends StatelessWidget {
        {
     "title": "Maksud Harta Pusaka",
     "icon": Icons.account_balance_wallet,
-    "contents": [
-      "Harta pusaka ialah segala harta yang ditinggalkan oleh seseorang selepas kematiannya untuk diwarisi oleh waris yang layak.",
-      "Contoh: rumah, tanah, simpanan bank, saham, kenderaan."
+    "subtopics": [
+      "Definisi Harta Pusaka",
+      "Cara Pengagihan Harta Si Mati"
     ],
   },
   {
     "title": "Definisi Faraid",
     "icon": Icons.menu_book,
-    "contents": [
-      "Faraid ialah hukum pembahagian harta pusaka menurut Islam.",
-      "Tujuan: memastikan hak waris dijaga dengan adil."
-    ],
+    "subtopics": [],
   },
   {
     "title": "Kepentingan Faraid",
     "icon": Icons.star_outline,
-    "contents": [
-      "Menjamin hak waris.",
-      "Mencegah pertikaian keluarga.",
-      "Menegakkan hukum Islam."
-    ],
+    "subtopics": [],
   },
   {
     "title": "Rukun Faraid",
     "icon": Icons.rule,
-    "contents": [
-      "Si mati meninggalkan harta.",
-      "Terdapat waris yang berhak."
+    "subtopics": [
+      "Al-Muwarrith",
+      "Al-Warith",
+      "Al-Mawruth"
     ],
   },
   {
     "title": "Syarat-syarat Faraid",
     "icon": Icons.check_circle_outline,
-    "contents": [
-      "Waris hidup pada masa pembahagian.",
-      "Harta adalah milik si mati."
-    ],
+    "subtopics": [],
   },
   {
     "title": "Sebab Faraid",
     "icon": Icons.gavel,
-    "contents": [
-      "Mati seseorang yang meninggalkan harta.",
-      "Waris yang berhak perlu tahu hak masing-masing."
+    "subtopics": [
+      "Sebab berlaku faraid",
+      "Halangan pembahagian faraid"
     ],
   },
   {
     "title": "Senarai Waris Pusaka",
     "icon": Icons.people_outline,
-    "contents": [
-      "Ibu bapa, anak-anak, suami/isteri, adik-beradik.",
-      "Mengikut urutan faraid yang ditetapkan."
+    "subtopics": [
+      "Waris lelaki",
+      "Waris perempuan"
     ],
   },
     ];
@@ -151,6 +135,7 @@ class IlmuFaraidScreen extends StatelessWidget {
               itemCount: topicsList.length,
               itemBuilder: (context, index) {
                 final topic = topicsList[index];
+                final subtopics = topic["subtopics"];
                 return Container(
                   margin: const EdgeInsets.only(bottom: 16),
                   child: Material(
@@ -174,15 +159,61 @@ class IlmuFaraidScreen extends StatelessWidget {
                         topic["title"],
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
-                      children: List<Widget>.generate(
-                        topic["contents"].length,
-                        (i) => Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text(
-                            topic["contents"][i],
-                            style: const TextStyle(fontSize:15 , height: 1.6),
-                          ),
-                        ),
+                      children: List.generate(
+                        subtopics.length,
+                        (i) {
+                          return ListTile(
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+                            title: Text(
+                              subtopics[i],
+                              style: const TextStyle(
+                                fontSize: 15
+                              ),
+                            ),
+                            trailing: const Icon(Icons.arrow_forward_ios, size: 15),
+                            onTap:() {
+                              showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                builder: (context) {
+                                  return Container(
+                                    height: 400,
+                                    decoration: const BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(25),
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+
+                                          Text(
+                                            subtopics[i],
+                                            style: const TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+
+                                          const Text(
+                                            "Contoh penerangan untuk topik ini.",
+                                            style: TextStyle(
+                                              fontSize: 16,),
+                                          ),
+                                        ],
+                                      )
+                                    ),
+                                  );
+                                }
+                              );
+                            }
+                          );
+                        }
                       ),
                     ),
                   ),
