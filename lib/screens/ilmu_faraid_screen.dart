@@ -1,5 +1,5 @@
 import '../screens/subtopics_screen/definisi_harta_pusaka.dart';
-// import '../screens/subtopics_screen/cara_pengagihan_harta.dart';
+import '../screens/subtopics_screen/cara_pengagihan_harta.dart';
 // import '../screens/subtopics_screen/definisi_faraid.dart';
 // ... tambah import lain bila dah siap
 
@@ -19,10 +19,13 @@ class IlmuFaraidScreen extends StatelessWidget {
   // ─────────────────────────────────────────────────────────────────────────
   void openPage(BuildContext context, String title) {
     switch (title) {
-
       // ── Bottom Sheet subtopics ──────────────────────────────────────────
       case "Definisi Harta Pusaka":
         _openSheet(context, const DefinisiHartaPusakaSheet());
+        break;
+
+      case "Cara Pengagihan Harta Si Mati":
+        _openSheet(context, const CaraPengagihanHartaSheet());
         break;
 
       // Uncomment bila dah siap:
@@ -37,16 +40,10 @@ class IlmuFaraidScreen extends StatelessWidget {
       //   break;
 
       // ── Full page subtopics ─────────────────────────────────────────────
-      // case "Cara Pengagihan Harta Si Mati":
-      //   _openFullPage(context, const CaraPengagihanHartaScreen());
-      //   break;
 
       default:
         // Placeholder untuk subtopics yang belum siap
-        _openSheet(
-          context,
-          _PlaceholderSheet(title: title),
-        );
+        _openSheet(context, _PlaceholderSheet(title: title));
     }
   }
 
@@ -60,10 +57,7 @@ class IlmuFaraidScreen extends StatelessWidget {
   }
 
   void _openFullPage(BuildContext context, Widget page) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => page),
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (_) => page));
   }
 
   @override
@@ -72,16 +66,9 @@ class IlmuFaraidScreen extends StatelessWidget {
       {
         "title": "Maksud Harta Pusaka",
         "icon": Icons.account_balance_wallet,
-        "subtopics": [
-          "Definisi Harta Pusaka",
-          "Cara Pengagihan Harta Si Mati",
-        ],
+        "subtopics": ["Definisi Harta Pusaka", "Cara Pengagihan Harta Si Mati"],
       },
-      {
-        "title": "Definisi Faraid",
-        "icon": Icons.menu_book,
-        "subtopics": [],
-      },
+      {"title": "Definisi Faraid", "icon": Icons.menu_book, "subtopics": []},
       {
         "title": "Kepentingan Faraid",
         "icon": Icons.star_outline,
@@ -90,11 +77,7 @@ class IlmuFaraidScreen extends StatelessWidget {
       {
         "title": "Rukun Faraid",
         "icon": Icons.rule,
-        "subtopics": [
-          "Al-Muwarrith",
-          "Al-Warith",
-          "Al-Mawruth",
-        ],
+        "subtopics": ["Al-Muwarrith", "Al-Warith", "Al-Mawruth"],
       },
       {
         "title": "Syarat-syarat Faraid",
@@ -104,18 +87,12 @@ class IlmuFaraidScreen extends StatelessWidget {
       {
         "title": "Sebab Faraid",
         "icon": Icons.gavel,
-        "subtopics": [
-          "Sebab berlaku faraid",
-          "Halangan pembahagian faraid",
-        ],
+        "subtopics": ["Sebab berlaku faraid", "Halangan pembahagian faraid"],
       },
       {
         "title": "Senarai Waris Pusaka",
         "icon": Icons.people_outline,
-        "subtopics": [
-          "Waris lelaki",
-          "Waris perempuan",
-        ],
+        "subtopics": ["Waris lelaki", "Waris perempuan"],
       },
     ];
 
@@ -127,16 +104,12 @@ class IlmuFaraidScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           'Ilmu Faraid',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Column(
         children: [
-
           /// Header Section
           Container(
             width: double.infinity,
@@ -188,69 +161,83 @@ class IlmuFaraidScreen extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     elevation: 4,
-                    child: subtopics.isEmpty
-                        // Topics tanpa subtopics — tap terus buka sheet
-                        ? ListTile(
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 14, horizontal: 20),
-                            leading: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: primaryColor.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(12),
+                    child:
+                        subtopics.isEmpty
+                            // Topics tanpa subtopics — tap terus buka sheet
+                            ? ListTile(
+                              contentPadding: const EdgeInsets.symmetric(
+                                vertical: 14,
+                                horizontal: 20,
                               ),
-                              child: Icon(
-                                topic["icon"] as IconData,
-                                color: primaryColor,
-                              ),
-                            ),
-                            title: Text(
-                              topic["title"] as String,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            trailing: const Icon(
-                              Icons.arrow_forward_ios,
-                              size: 15,
-                            ),
-                            onTap: () =>
-                                openPage(context, topic["title"] as String),
-                          )
-                        // Topics dengan subtopics — expandable
-                        : ExpansionTile(
-                            tilePadding: const EdgeInsets.symmetric(
-                                vertical: 18, horizontal: 20),
-                            leading: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: primaryColor.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Icon(
-                                topic["icon"] as IconData,
-                                color: primaryColor,
-                              ),
-                            ),
-                            title: Text(
-                              topic["title"] as String,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            children: subtopics.map((sub) {
-                              return ListTile(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 20),
-                                title: Text(
-                                  sub,
-                                  style: const TextStyle(fontSize: 15),
+                              leading: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: primaryColor.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                trailing: const Icon(
-                                    Icons.arrow_forward_ios,
-                                    size: 15),
-                                onTap: () => openPage(context, sub),
-                              );
-                            }).toList(),
-                          ),
+                                child: Icon(
+                                  topic["icon"] as IconData,
+                                  color: primaryColor,
+                                ),
+                              ),
+                              title: Text(
+                                topic["title"] as String,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              trailing: const Icon(
+                                Icons.arrow_forward_ios,
+                                size: 15,
+                              ),
+                              onTap:
+                                  () => openPage(
+                                    context,
+                                    topic["title"] as String,
+                                  ),
+                            )
+                            // Topics dengan subtopics — expandable
+                            : ExpansionTile(
+                              tilePadding: const EdgeInsets.symmetric(
+                                vertical: 18,
+                                horizontal: 20,
+                              ),
+                              leading: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: primaryColor.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Icon(
+                                  topic["icon"] as IconData,
+                                  color: primaryColor,
+                                ),
+                              ),
+                              title: Text(
+                                topic["title"] as String,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              children:
+                                  subtopics.map((sub) {
+                                    return ListTile(
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
+                                            horizontal: 20,
+                                          ),
+                                      title: Text(
+                                        sub,
+                                        style: const TextStyle(fontSize: 15),
+                                      ),
+                                      trailing: const Icon(
+                                        Icons.arrow_forward_ios,
+                                        size: 15,
+                                      ),
+                                      onTap: () => openPage(context, sub),
+                                    );
+                                  }).toList(),
+                            ),
                   ),
                 );
               },
@@ -290,15 +277,15 @@ class _PlaceholderSheet extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 32),
-          const Icon(Icons.construction_rounded,
-              size: 48, color: Color(0xFF2E3192)),
+          const Icon(
+            Icons.construction_rounded,
+            size: 48,
+            color: Color(0xFF2E3192),
+          ),
           const SizedBox(height: 16),
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
           Text(
