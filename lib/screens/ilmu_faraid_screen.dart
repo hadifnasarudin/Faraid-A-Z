@@ -1,6 +1,9 @@
+import 'package:faraid_a_z/screens/subtopics_screen/rukun_faraid.dart';
 import '../screens/subtopics_screen/definisi_harta_pusaka.dart';
 import '../screens/subtopics_screen/cara_pengagihan_harta.dart';
-// import '../screens/subtopics_screen/definisi_faraid.dart';
+import '../screens/subtopics_screen/definisi_faraid.dart';
+import '../screens/subtopics_screen/kepentingan_faraid.dart';
+import '../screens/subtopics_screen/syarat_faraid.dart';
 // ... tambah import lain bila dah siap
 
 import 'package:flutter/material.dart';
@@ -26,6 +29,30 @@ class IlmuFaraidScreen extends StatelessWidget {
 
       case "Cara Pengagihan Harta Si Mati":
         _openSheet(context, const CaraPengagihanHartaSheet());
+        break;
+
+      case "Definisi Faraid":
+        _openSheet(context, const DefinisiFaraidSheet());
+        break;
+
+      case "Kepentingan Faraid":
+        _openSheet(context, const KepentinganFaraidSheet());
+        break;
+      
+      case "Syarat-syarat Faraid":
+        _openSheet(context, const SyaratFaraidSheet());
+        break;
+
+      case "Al-Muwarrith":
+        _openSheet(context, const AlMuwarrithSheet());
+        break;
+
+      case "Al-Warith":
+        _openSheet(context, const AlWarithSheet());
+        break;
+
+      case "Al-Mawruth":
+        _openSheet(context, const AlMawruthSheet());
         break;
 
       // Uncomment bila dah siap:
@@ -154,7 +181,7 @@ class IlmuFaraidScreen extends StatelessWidget {
               itemCount: topicsList.length,
               itemBuilder: (context, index) {
                 final topic = topicsList[index];
-                final subtopics = topic["subtopics"] as List<String>;
+                final subtopics = List<String>.from(topic["subtopics"]);
                 return Container(
                   margin: const EdgeInsets.only(bottom: 16),
                   child: Material(
