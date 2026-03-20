@@ -4,6 +4,8 @@ import '../screens/subtopics_screen/cara_pengagihan_harta.dart';
 import '../screens/subtopics_screen/definisi_faraid.dart';
 import '../screens/subtopics_screen/kepentingan_faraid.dart';
 import '../screens/subtopics_screen/syarat_faraid.dart';
+import '../screens/subtopics_screen/sebab_berlaku_faraid.dart';
+import '../screens/subtopics_screen/halangan_pembahagian_faraid.dart';
 // ... tambah import lain bila dah siap
 
 import 'package:flutter/material.dart';
@@ -53,6 +55,14 @@ class IlmuFaraidScreen extends StatelessWidget {
 
       case "Al-Mawruth":
         _openSheet(context, const AlMawruthSheet());
+        break;
+
+      case "Sebab berlaku faraid":
+        _openSheet(context, const SebabBerlakuFaraidSheet());
+        break; 
+
+      case "Halangan pembahagian faraid":
+        _openSheet(context, const HalanganFaraidSheet());
         break;
 
       // Uncomment bila dah siap:
