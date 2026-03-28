@@ -6,6 +6,7 @@ import '../screens/subtopics_screen/kepentingan_faraid.dart';
 import '../screens/subtopics_screen/syarat_faraid.dart';
 import '../screens/subtopics_screen/sebab_berlaku_faraid.dart';
 import '../screens/subtopics_screen/halangan_pembahagian_faraid.dart';
+import '../screens/subtopics_screen/senarai_waris.dart';
 // ... tambah import lain bila dah siap
 
 import 'package:flutter/material.dart';
@@ -65,16 +66,13 @@ class IlmuFaraidScreen extends StatelessWidget {
         _openSheet(context, const HalanganFaraidSheet());
         break;
 
-      // Uncomment bila dah siap:
-      // case "Al-Muwarrith":
-      //   _openSheet(context, const AlMuwarrithSheet());
-      //   break;
-      // case "Al-Warith":
-      //   _openSheet(context, const AlWarithSheet());
-      //   break;
-      // case "Al-Mawruth":
-      //   _openSheet(context, const AlMawruthSheet());
-      //   break;
+      case "Waris lelaki":
+        _openSheet(context, const WarisLelakiSheet());
+        break;
+
+      case "Waris perempuan":
+        _openSheet(context, const WarisPerempuanSheet());
+        break;
 
       // ── Full page subtopics ─────────────────────────────────────────────
 
