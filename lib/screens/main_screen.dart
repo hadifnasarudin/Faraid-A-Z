@@ -7,6 +7,7 @@ import 'package:hijri/hijri_calendar.dart';
 import 'ilmu_faraid_screen.dart';
 import 'soalan_glosari.dart';
 import 'kes_faraid.dart';
+import 'kalkulator_faraid.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -76,6 +77,10 @@ class _MainScreenState extends State<MainScreen>
         break;
       case 'Kes Faraid':
         page = const KesFaraidListPage();
+        break;
+
+      case 'Kalkulator Faraid':
+        page = const KalkulatorFaraidScreen();
         break;
     }
     if (page != null) {
