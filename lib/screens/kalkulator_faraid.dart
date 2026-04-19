@@ -918,7 +918,7 @@ class _KalkulatorFaraidScreenState extends State<KalkulatorFaraidScreen>
     }
 
     return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 20, 16, 36),
+      padding: const EdgeInsets.fromLTRB(16, 20, 16, 100),
       children: [
 
         // ── Summary card ──

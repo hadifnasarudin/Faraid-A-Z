@@ -267,7 +267,7 @@ class _WarisSheetState extends State<_WarisSheet> {
             child: filtered.isEmpty
                 ? _buildEmpty()
                 : ListView.separated(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
                     itemCount: filtered.length,
                     separatorBuilder: (_, __) => const SizedBox(height: 8),
                     itemBuilder: (_, i) => _WarisItem(

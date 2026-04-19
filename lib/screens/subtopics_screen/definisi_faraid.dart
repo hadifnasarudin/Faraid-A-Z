@@ -41,7 +41,7 @@ class DefinisiFaraidSheet extends StatelessWidget {
 
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 36),
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 100),
               child: Column(
                 children: [
 
@@ -374,7 +374,7 @@ class _DefinitionCard extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  childAspectRatio: 1.55,
+                  childAspectRatio: 1.3,
                   children: meanings.map((m) {
                     return Container(
                       padding: const EdgeInsets.all(12),

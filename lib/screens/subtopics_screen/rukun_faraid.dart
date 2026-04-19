@@ -224,7 +224,7 @@ class _RukunSheet extends StatelessWidget {
 
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 36),
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 100),
               child: Column(
                 children: [
 

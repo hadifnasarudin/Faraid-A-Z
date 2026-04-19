@@ -34,7 +34,7 @@ class KepentinganFaraidSheet extends StatelessWidget {
           const SizedBox(height: 4),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 36),
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 100),
               child: Column(
                 children: [
                   _HeroHeader(),
@@ -248,15 +248,15 @@ class _HeroHeader extends StatelessWidget {
               ),
               const SizedBox(height: 14),
               // 3 stat chips
-              Row(
-                children: [
-                  _StatChip(label: '3', sublabel: 'Kepentingan'),
-                  const SizedBox(width: 10),
-                  _StatChip(label: '12', sublabel: 'Poin Utama'),
-                  const SizedBox(width: 10),
-                  _StatChip(label: 'Wajib', sublabel: 'Dipelajari'),
-                ],
-              ),
+              // Row(
+              //   children: [
+              //     _StatChip(label: '3', sublabel: 'Kepentingan'),
+              //     const SizedBox(width: 10),
+              //     _StatChip(label: '12', sublabel: 'Poin Utama'),
+              //     const SizedBox(width: 10),
+              //     _StatChip(label: 'Wajib', sublabel: 'Dipelajari'),
+              //   ],
+              // ),
             ],
           ),
         ],

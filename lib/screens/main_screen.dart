@@ -157,7 +157,7 @@ class _MainScreenState extends State<MainScreen>
               delegate: SliverChildListDelegate([
                 _FeatureCard(
                   title: 'Ilmu Faraid',
-                  subtitle: 'Pelajari ilmu pembahagian harta',
+                  subtitle: '',
                   icon: Icons.menu_book_rounded,
                   gradient: const [Color(0xFF2E3192), Color(0xFF1565C0)],
                   accentColor: const Color(0xFF82B1FF),
@@ -165,7 +165,7 @@ class _MainScreenState extends State<MainScreen>
                 ),
                 _FeatureCard(
                   title: 'Kalkulator',
-                  subtitle: 'Kira bahagian waris',
+                  subtitle: '',
                   icon: Icons.calculate_rounded,
                   gradient: const [Color(0xFF1B5E20), Color(0xFF2E7D32)],
                   accentColor: const Color(0xFFA5D6A7),
@@ -173,15 +173,15 @@ class _MainScreenState extends State<MainScreen>
                 ),
                 _FeatureCard(
                   title: 'Soalan Lazim',
-                  subtitle: 'Soal jawab & glosari',
+                  subtitle: '',
                   icon: Icons.help_outline_rounded,
                   gradient: const [Color(0xFF6A1B9A), Color(0xFF7B1FA2)],
                   accentColor: const Color(0xFFCE93D8),
                   onTap: () => _navigate(context, 'Soalan Lazim'),
                 ),
                 _FeatureCard(
-                  title: 'Kes Faraid',
-                  subtitle: 'Contoh kes & rujukan',
+                  title: 'Contoh kes',
+                  subtitle: '',
                   icon: Icons.folder_open_rounded,
                   gradient: const [Color(0xFF7B2D00), Color(0xFFBF360C)],
                   accentColor: const Color(0xFFFFAB91),
@@ -204,11 +204,15 @@ class _MainScreenState extends State<MainScreen>
               child: _QuickInfoStrip(),
             ),
           ),
+
+          SliverToBoxAdapter(
+            child: SizedBox(height: 50),
+          ),
         ],
       ),
 
       // ── Bottom Nav ────────────────────────────────────────────────────────
-      bottomNavigationBar: _BottomNav(),
+      //bottomNavigationBar: _BottomNav(),
     );
   }
 }
@@ -607,113 +611,113 @@ class _QuickInfoStrip extends StatelessWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 // BOTTOM NAVIGATION BAR
 // ─────────────────────────────────────────────────────────────────────────────
-class _BottomNav extends StatefulWidget {
-  @override
-  State<_BottomNav> createState() => _BottomNavState();
-}
+// class _BottomNav extends StatefulWidget {
+//   @override
+//   State<_BottomNav> createState() => _BottomNavState();
+// }
 
-class _BottomNavState extends State<_BottomNav> {
-  int _current = 0;
-  static const Color navy = Color(0xFF0D1247);
-  static const Color gold = Color(0xFFC9A84C);
+// class _BottomNavState extends State<_BottomNav> {
+//   int _current = 0;
+//   static const Color navy = Color(0xFF0D1247);
+//   static const Color gold = Color(0xFFC9A84C);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 20,
-            offset: const Offset(0, -4),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _NavItem(
-                icon: Icons.home_rounded,
-                label: 'Utama',
-                selected: _current == 0,
-                onTap: () => setState(() => _current = 0),
-              ),
-              _NavItem(
-                icon: Icons.bookmarks_rounded,
-                label: 'Simpanan',
-                selected: _current == 1,
-                onTap: () => setState(() => _current = 1),
-              ),
-              _NavItem(
-                icon: Icons.person_rounded,
-                label: 'Profil',
-                selected: _current == 2,
-                onTap: () => setState(() => _current = 2),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         color: Colors.white,
+//         boxShadow: [
+//           BoxShadow(
+//             color: Colors.black.withOpacity(0.08),
+//             blurRadius: 20,
+//             offset: const Offset(0, -4),
+//           ),
+//         ],
+//       ),
+//       child: SafeArea(
+//         child: Padding(
+//           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+//           child: Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceAround,
+//             children: [
+//               _NavItem(
+//                 icon: Icons.home_rounded,
+//                 label: 'Utama',
+//                 selected: _current == 0,
+//                 onTap: () => setState(() => _current = 0),
+//               ),
+//               _NavItem(
+//                 icon: Icons.bookmarks_rounded,
+//                 label: 'Simpanan',
+//                 selected: _current == 1,
+//                 onTap: () => setState(() => _current = 1),
+//               ),
+//               _NavItem(
+//                 icon: Icons.person_rounded,
+//                 label: 'Profil',
+//                 selected: _current == 2,
+//                 onTap: () => setState(() => _current = 2),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class _NavItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
+// class _NavItem extends StatelessWidget {
+//   final IconData icon;
+//   final String label;
+//   final bool selected;
+//   final VoidCallback onTap;
 
-  static const Color navy = Color(0xFF0D1247);
-  static const Color gold = Color(0xFFC9A84C);
+//   static const Color navy = Color(0xFF0D1247);
+//   static const Color gold = Color(0xFFC9A84C);
 
-  const _NavItem({
-    required this.icon,
-    required this.label,
-    required this.selected,
-    required this.onTap,
-  });
+//   const _NavItem({
+//     required this.icon,
+//     required this.label,
+//     required this.selected,
+//     required this.onTap,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: EdgeInsets.symmetric(
-          horizontal: selected ? 16 : 10,
-          vertical: 8,
-        ),
-        decoration: BoxDecoration(
-          color: selected ? navy : Colors.transparent,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-              size: 22,
-              color: selected ? gold : Colors.grey.shade400,
-            ),
-            if (selected) ...[
-              const SizedBox(width: 6),
-              Text(
-                label,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: onTap,
+//       child: AnimatedContainer(
+//         duration: const Duration(milliseconds: 200),
+//         padding: EdgeInsets.symmetric(
+//           horizontal: selected ? 16 : 10,
+//           vertical: 8,
+//         ),
+//         decoration: BoxDecoration(
+//           color: selected ? navy : Colors.transparent,
+//           borderRadius: BorderRadius.circular(16),
+//         ),
+//         child: Row(
+//           mainAxisSize: MainAxisSize.min,
+//           children: [
+//             Icon(
+//               icon,
+//               size: 22,
+//               color: selected ? gold : Colors.grey.shade400,
+//             ),
+//             if (selected) ...[
+//               const SizedBox(width: 6),
+//               Text(
+//                 label,
+//                 style: const TextStyle(
+//                   color: Colors.white,
+//                   fontSize: 13,
+//                   fontWeight: FontWeight.w600,
+//                 ),
+//               ),
+//             ],
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'main_screen.dart';
+//import 'main_screen.dart';
+import 'main_wrapper.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -9,24 +10,28 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: GestureDetector(
         onTap: () {
-          // bila user tekan screen, pergi ke LandingPage
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => const MainScreen()),
+            MaterialPageRoute(builder: (_) => const MainWrapper()),
           );
         },
-        child: Container(
-          color: const Color(0xFFD9D9D9),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'lib/assets/images/Faraid_A-Z.png',
-                )
-              ]
+        child: Stack(
+          children: [
+            // 🔥 Full screen image
+            Positioned.fill(
+              child: Image.asset(
+                'lib/assets/images/Gemini_Generated_Image_1.png', // ❗ buang lib/
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
+
+            // (optional) overlay gelap sikit
+            Positioned.fill(
+              child: Container(color: Colors.black.withOpacity(0.2)),
+            ),
+
+            
+          ],
         ),
       ),
     );

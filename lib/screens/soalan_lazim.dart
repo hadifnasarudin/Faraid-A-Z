@@ -148,7 +148,7 @@ class _SoalanLazimPageState extends State<SoalanLazimPage> {
             child: filtered.isEmpty
                 ? _buildEmpty()
                 : ListView.separated(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
                     itemCount: filtered.length,
                     separatorBuilder: (_, __) => const SizedBox(height: 10),
                     itemBuilder: (_, i) => _FaqCard(
@@ -462,7 +462,7 @@ class _FaqDetailSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 36),
+      padding: const EdgeInsets.fromLTRB(20, 12, 20, 100),
       decoration: const BoxDecoration(
         color: Color(0xFFF7F8FC),
         borderRadius: BorderRadius.vertical(top: Radius.circular(28)),

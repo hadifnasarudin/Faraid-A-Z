@@ -50,7 +50,7 @@ class DefinisiHartaPusakaSheet extends StatelessWidget {
           // ── Scrollable content ──
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 100),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

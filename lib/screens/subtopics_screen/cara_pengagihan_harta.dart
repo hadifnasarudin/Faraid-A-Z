@@ -175,7 +175,7 @@ class _CaraPengagihanBodyState extends State<_CaraPengagihanBody>
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 100),
       child: Column(
         children: [
           // ── Hero header ──
@@ -303,7 +303,7 @@ class _CycleDiagram extends StatelessWidget {
       aspectRatio: 1.0,
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final size = constraints.maxWidth;
+          final size = constraints.maxWidth *1.1;
           final center = Offset(size / 2, size / 2);
           final orbitRadius = size * 0.355;
           final nodeRadius = size * 0.115;
@@ -506,7 +506,7 @@ class _CyclePainter extends CustomPainter {
         text: step.title,
         style: TextStyle(
           color: Colors.white,
-          fontSize: r * 0.32,
+          fontSize: r * 0.25,
           fontWeight: FontWeight.w600,
           height: 1.25,
         ),
@@ -545,7 +545,7 @@ class _CyclePainter extends CustomPainter {
         text: 'Pengagihan',
         style: TextStyle(
           color: Colors.white70,
-          fontSize: 10,
+          fontSize: 13,
           fontWeight: FontWeight.w500,
         ),
       ),
@@ -558,7 +558,7 @@ class _CyclePainter extends CustomPainter {
         text: 'Harta',
         style: TextStyle(
           color: Colors.white70,
-          fontSize: 10,
+          fontSize: 13,
           fontWeight: FontWeight.w500,
         ),
       ),

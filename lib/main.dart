@@ -1,5 +1,7 @@
+import 'package:faraid_a_z/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
+//import 'screens/splash_screen.dart';
+import 'screens/main_wrapper.dart';
 
 
 void main() {

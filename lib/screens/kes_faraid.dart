@@ -169,7 +169,7 @@ class _KesFaraidListPageState extends State<KesFaraidListPage> {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 36),
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
         children: [
 
           // ── Header ──
@@ -220,36 +220,36 @@ class _KesFaraidListPageState extends State<KesFaraidListPage> {
           const SizedBox(height: 20),
 
           // ── Stats row ──
-          Row(
-            children: [
-              Expanded(
-                child: _StatCard(
-                  label: 'Mudah',
-                  count: _mudahCount,
-                  color: const Color(0xFF2E7D32),
-                  lightColor: const Color(0xFFE8F5E9),
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: _StatCard(
-                  label: 'Sederhana',
-                  count: _sederhanaCount,
-                  color: const Color(0xFFF59E0B),
-                  lightColor: const Color(0xFFFFF8E1),
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: _StatCard(
-                  label: 'Kompleks',
-                  count: _kompleksCount,
-                  color: const Color(0xFFBF360C),
-                  lightColor: const Color(0xFFFBE9E7),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: _StatCard(
+          //         label: 'Mudah',
+          //         count: _mudahCount,
+          //         color: const Color(0xFF2E7D32),
+          //         lightColor: const Color(0xFFE8F5E9),
+          //       ),
+          //     ),
+          //     const SizedBox(width: 10),
+          //     Expanded(
+          //       child: _StatCard(
+          //         label: 'Sederhana',
+          //         count: _sederhanaCount,
+          //         color: const Color(0xFFF59E0B),
+          //         lightColor: const Color(0xFFFFF8E1),
+          //       ),
+          //     ),
+          //     const SizedBox(width: 10),
+          //     Expanded(
+          //       child: _StatCard(
+          //         label: 'Kompleks',
+          //         count: _kompleksCount,
+          //         color: const Color(0xFFBF360C),
+          //         lightColor: const Color(0xFFFBE9E7),
+          //       ),
+          //     ),
+          //   ],
+          // ),
 
           const SizedBox(height: 20),
 
